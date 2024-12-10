@@ -9,7 +9,7 @@
     Oops, something went wrong! Please check the errors below.
   </.error>
   
-  <div>
+  <%!-- <div>
     <label for={form[:name].id} class="block text-sm font-semibold leading-6 text-zinc-800">
       Name
     </label>
@@ -22,9 +22,8 @@
       value={form[:name].value}
     />
     <.error :for={msg <- form[:name].errors}><%= translate_error(msg) %></.error>
-  </div>
-  
-  <div>
+  </div> --%>
+  <%!-- <div>
     <label for={form[:email].id} class="block text-sm font-semibold leading-6 text-zinc-800">
       Email
     </label>
@@ -37,14 +36,15 @@
       value={form[:email].value}
     />
     <.error :for={msg <- form[:email].errors}><%= translate_error(msg) %></.error>
-  </div>
-  
+  </div> --%>
   <%!-- <button
     type="submit"
     class="rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3 text-sm font-semibold leading-6 text-white active:text-white/80"
   >
     Save Contact
   </button> --%>
+  <.input field={form[:name]} type="text" label="Name" />
+  <.input field={form[:email]} type="email" label="Email" />
   <:actions>
     <.button type="submit">
       Save Contact
