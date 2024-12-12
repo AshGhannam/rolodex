@@ -4,9 +4,9 @@
     <%= if @contact.title do %>
       <%= @contact.title %>.
     <% end %>
-
-    <%= @contact.name %>
+     <%= @contact.name %>
   </h1>
+  
   <div class="ml-auto text-gray-400">
     <%= if @contact.favorite do %>
       <.icon name="hero-star-solid" class="bg-orange-300 h-6 w-6" />
@@ -23,18 +23,20 @@
       <%= @contact.email %>
     </div>
   </div>
-
+  
   <div :if={@contact.birthday} class="flex items-start space-x-3">
     <.icon name="hero-cake" class="h-6 w-6 text-gray-400 shrink-0" />
     <div>
       <%= Calendar.strftime(@contact.birthday, "%m/%d/%Y") %>
     </div>
   </div>
-
+  
   <div :if={@contact.notes} class="flex items-start space-x-3">
     <.icon name="hero-pencil-square" class="h-6 w-6 text-gray-400 shrink-0" />
     <div>
-      <%= @contact.notes %>
+      <%= for paragraph <- String.split(@contact.notes, ~r/\s*\n\s*/) do %>
+        <p class="mb-2"><%= paragraph %></p>
+      <% end %>
     </div>
   </div>
 </div>
