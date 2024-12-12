@@ -4,6 +4,18 @@
   </.error>
    <.input field={form[:name]} type="text" label="Name" />
   <.input field={form[:email]} type="email" label="Email" />
+  <.input field={form[:favorite]} type="checkbox" label="Favorite" />
+  <%!-- <label class="flex items-center gap-4 text-sm leading-6 text-zinc-600">
+    <input type="hidden" name={form[:favorite].name} value="false" />
+    <input
+      type="checkbox"
+      id={form[:favorite].id}
+      name={form[:favorite].name}
+      class="rounded border-zinc-300 text-zinc-900 focus:ring-0"
+      value="true"
+      checked={Phoenix.HTML.Form.normalize_value("checkbox", form[:favorite].value)}
+    /> Favorite
+  </label> --%>
   <:actions>
     <.button type="submit">
       Save Contact
