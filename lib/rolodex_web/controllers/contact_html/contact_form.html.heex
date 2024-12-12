@@ -6,6 +6,13 @@
   <.input field={form[:email]} type="email" label="Email" />
   <.input field={form[:favorite]} type="checkbox" label="Favorite" />
   <.input field={form[:notes]} type="textarea" label="Notes" />
+  <.input
+    field={form[:title]}
+    label="Title"
+    options={Rolodex.Contacts.Contact.titles()}
+    prompt="Select a title..."
+    type="select"
+  />
   <%!-- <label class="flex items-center gap-4 text-sm leading-6 text-zinc-600">
     <input type="hidden" name={form[:favorite].name} value="false" />
     <input
